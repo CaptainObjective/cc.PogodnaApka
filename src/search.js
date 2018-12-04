@@ -11,6 +11,7 @@ class Search {
     refresh(weather) {
         // TODO: Podmiana tego co siedzi w inpucie w oparciu o właściwosci otrzymanego obiektu
         // 'Ubierz się ciepło bo pizdzi' ~ K. Jaskulska 2018
+        console.log('test');
     }
 
     loading(isLoading) {
