@@ -1,0 +1,21 @@
+body{
+    background: skyblue;
+}
+
+#wrapper{
+    width: 100%;
+}
+
+#results{
+    margin: 2vh 2vw;
+}
+#search{
+    margin: 2vh 2vw;
+}
+#ikonka{
+    display: inline;
+}
+#mainbar{
+    display: inline;
+
+}

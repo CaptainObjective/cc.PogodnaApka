@@ -1,0 +1,38 @@
+{
+  "name": "cc.pogodnaapka",
+  "version": "1.0.0",
+  "description": "Best weather app in the Internet",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CaptainObjective/cc.PogodnaApka.git"
+  },
+  "keywords": [
+    "Weather",
+    "js",
+    "app",
+    "CodersCrew"
+  ],
+  "author": "Kinga Jaskulska, Anna Łokietko, Bartek Pązik, Paweł Charaziński, Wojtek Opulski, Marcin Woś",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CaptainObjective/cc.PogodnaApka/issues"
+  },
+  "homepage": "https://github.com/CaptainObjective/cc.PogodnaApka#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.2.0",
+    "@babel/core": "^7.2.0",
+    "@babel/plugin-proposal-class-properties": "^7.2.0",
+    "@babel/preset-env": "^7.2.0",
+    "babel-loader": "^8.0.4",
+    "webpack": "^4.26.1",
+    "webpack-cli": "^3.1.2"
+  },
+  "dependencies": {
+    "semantic-ui": "^2.4.2"
+  }
+}
