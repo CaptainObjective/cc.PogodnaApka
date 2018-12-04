@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <title>Weather App</title>
 </head>
 
@@ -26,10 +27,30 @@
             </div>
             <div class="results"></div>
         </div>
-<div id= "audio_div">
-        <iframe src="https://open.spotify.com/embed/track/4rhcqdXTzNX9uZRZybj3UP" width="300"
-            height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-        </div> 
+
+        <!-- TO DO: 
+        1. dodać nagłówek "poczuj nastrój" i poza muzyką wrzucić fragment wiersza albo cytat albo ciekawostkę
+        2. dopracować losowanie utworów 
+        3. podmienić zmienną na zmienną z API  -->
+
+
+
+        <div id="mood" class="ui segment">
+            <h2 id="mood_text" class="ui header">
+                <div class="content">
+                    <i class="music icon"></i>
+                    Poczuj tę pogodę przez piosenkę!
+                    <div class="sub header">Wybraliśmy dla Ciebie utwór, który pasuje do obecnej pogody</div>
+                    <div id="audio_div" class="content">
+                        <iframe id="spotify" src="https://open.spotify.com/embed/track/4rhcqdXTzNX9uZRZybj3UP" width="300"
+                            height="380" frameborder="0" allowtransparency="false" allow="encrypted-media"></iframe>
+                    </div>
+                </div>
+            </h2>
+        </div>
+
+
+
     </div>
 
 
@@ -39,6 +60,8 @@
     <script src="app.js"></script>
     <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
+
+
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
         crossorigin="anonymous"></script>
     <script src="semantic/dist/semantic.min.js"></script>

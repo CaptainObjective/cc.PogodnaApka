@@ -8,7 +8,7 @@ body {
 
 #wrapper {
     width: 100%;
-   
+
 }
 
 #video-background {
@@ -24,11 +24,11 @@ body {
 }
 
 #results {
-    margin: 2vh 2vw;
+    margin: 2vh 8vw;
 }
 
 #search {
-    margin: 2vh 2vw;
+    margin: 2vh 8vw;
 }
 
 #ikonka {
@@ -40,7 +40,24 @@ body {
 
 }
 
-#audio_div {
-display: flex;
-justify-content: center;
+#mood {
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    margin: 2vh 8vw;
+}
+
+#mood_text {}
+
+#audio_div {}
+
+#spotify {
+    margin: 2vh 0;
+
+}
+
+.content,
+.segment {
+    opacity: 0.85;
+
 }
