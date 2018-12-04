@@ -1,21 +1,42 @@
-body{
+body {
     background: skyblue;
+    margin: 0;
+    padding: 0;
+    background-attachment: fixed;
+    background-size: cover;
 }
 
-#wrapper{
+#wrapper {
     width: 100%;
 }
 
-#results{
+#video-background {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    /* filter: blur(4px); */
+}
+
+#results {
     margin: 2vh 2vw;
 }
-#search{
+
+#search {
     margin: 2vh 2vw;
 }
-#ikonka{
+
+#ikonka {
     display: inline;
 }
-#mainbar{
+
+#mainbar {
     display: inline;
 
 }
+
+#audio-background {}

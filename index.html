@@ -9,7 +9,12 @@
 </head>
 
 <body>
+
     <div id="wrapper">
+        <video autoplay loop id="video-background" muted plays-inline>
+        </video>
+
+
         <div id="results" class="ui segment">
             <i id="icon" class="huge snowflake icon"></i>
             <h1 id="mainbar" class="ui header">20 &#8451 Nazwa miasta</h1>
@@ -21,10 +26,12 @@
             </div>
             <div class="results"></div>
         </div>
+
+        <iframe id="audio-background" src="https://open.spotify.com/embed/track/4rhcqdXTzNX9uZRZybj3UP" width="300"
+            height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
     </div>
 
 
-    </div>
 
 
 
@@ -34,6 +41,8 @@
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
         crossorigin="anonymous"></script>
     <script src="semantic/dist/semantic.min.js"></script>
+    <script src="background.js"></script>
+    <script src="music.js"></script>
 </body>
 
 </html>
