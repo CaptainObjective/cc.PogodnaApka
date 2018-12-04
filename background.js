@@ -1,10 +1,14 @@
-let key_word = [1, 2, 3, 4, 5, 6, 7, 8];
-let key_word_current = key_word[Math.floor(Math.random() * key_word.length)];
+// tablica, którą ma zastąpić info z API
+let key_word = [1, 2, 3, 4, 5, 6, 7, 8]; 
+// losowanie z tablicy
+let key_word_current = key_word[Math.floor(Math.random() * key_word.length)];  
 console.log(key_word_current);
-let video = document.getElementById('video-background');
-let source = document.createElement('source');
-let source_current = 'https://player.vimeo.com/external/206536398.hd.mp4?s=6890b433df51fc5e7456fea2d025268b316fd2c9&profile_id=119&oauth2_token_id=57447761&download=1';
+let video = document.getElementById('video-background'); 
+let source = document.createElement('source'); 
+// wartość defaultowa zmiennej, która odpowiada za src wyświetlanego tła 
+let source_current = 'https://player.vimeo.com/external/206536398.hd.mp4?s=6890b433df51fc5e7456fea2d025268b316fd2c9&profile_id=119&oauth2_token_id=57447761&download=1'; 
 
+//losowanie z tablicy, jaki link będzie w src tła (deszcz/śnieg/słonce,etc.)
 switch (key_word_current) {
     case 1:
         {
@@ -47,7 +51,7 @@ switch (key_word_current) {
         }
         break;
 }
-
+// nadaj atrybut src o wartości zmiennej source_current
 source.setAttribute('src', source_current);
 video.appendChild(source);
 video.load();
