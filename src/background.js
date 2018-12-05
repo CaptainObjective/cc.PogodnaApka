@@ -65,3 +65,9 @@ video.play();
 }
 
 export default Background;
+
+// <!-- TO DO: 
+// 1. Pobieranie czasu i na podstawie tego zmiana dzien/noc - więcej teł 
+// // 2. dopracować losowanie utworów, wyśrodkować i dodać więcej 
+// // 3. podmienić zmienną na zmienną z API, i rzeczy z tym związane 
+// 3.1. Doczytać OOP 
