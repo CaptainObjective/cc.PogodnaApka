@@ -1,14 +1,18 @@
 import Background from './background';
 import Results from './results';
-import Search from './search';
 import Weather from './weather';
+import Search from './search';
 
 console.log('main.js loaded');
-
 const background = new Background;
 const results = new Results;
 const search = new Search;
 const weather = new Weather;
+
+
+window.addEventListener('load', loaded);
+window.addEventListener('keypressed', refresh_city); // Trzeba to zrobić tak żeby działał tylko na, enter wskazówka jest w tetrisie :D
+
 
 const refresh_city = () => {
 
@@ -26,5 +30,5 @@ const loaded = (e) => {
     refresh_city();
 }
 
-window.addEventListener('load', loaded);
-window.addEventListener('keypressed', refresh_city); // Trzeba to zrobić tak żeby działał tylko na enter, wskazówka jest w tetrisie :D
+
+
