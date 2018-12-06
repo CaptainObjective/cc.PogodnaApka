@@ -20,7 +20,7 @@ class Weather {
         this.weatherMain;     // grupa parametrow (Rain, Snow, Extreme)
         this.weatherDescription;    // opis pogody in english
         this.weatherIcon;   // 
-        
+
         this.windSpeed; // prędkość wiatru,  m/s
         this.windDeg;   // kierunek wiatru,  deg(meteorological)[whatever that is]
 
@@ -29,46 +29,46 @@ class Weather {
         this.rain3h;    // opady deszczu w przeciągu ostatnich 3 godzin
         this.snow1h;    // opady śniegu w przeciągu ostatniej 1 godziny
         this.snow3h;    // opady śniegu w przeciągu ostatnich 3 godzin
-     
+
         this.lon;       // szerokość geograficzna
         this.lat;       // długość geogragiczna
     }
 
-    getWeatherByCityName(cityName){
-        let url = `https://www.api.openweathermap.org/data/2.5/weather?q=${cityName}&APPID=86677a0c14bfe5ca97291ba315d620e6`;
-        fetch(url).then(r => r.json).then(data => { 
+    getWeatherByCityName(cityName) {
+        let url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&APPID=86677a0c14bfe5ca97291ba315d620e6`;
+        fetch(url).then(r => r.json()).then(data => {
             console.log(data)
 
-             this.cityName = data.name; 
-             this.countryCode = data.sys.coutry;
-             this.sunrise = data.sys.sunrise; 
-             this.sunset = data.sys.sunset; 
-             this.mainTemp = data.main.temp; 
-             this.mainPressure = data.main.pressure;
-             this.mainHumidity = data.main.humidity;
-             this.mainTempMin = data.temp_min;
-             this.mainTempMax = data.temp_max; 
+            this.cityName = data.name;
+            this.countryCode = data.sys.country;
+            this.sunrise = data.sys.sunrise;
+            this.sunset = data.sys.sunset;
+            this.mainTemp = data.main.temp;
+            this.mainPressure = data.main.pressure;
+            this.mainHumidity = data.main.humidity;
+            this.mainTempMin = data.temp_min;
+            this.mainTempMax = data.temp_max;
 
-             this.weatherID = data.weather.id;
-             this.weatherMain = data.weather.main;
-             this.weatherDescription = data.wather.description; 
-             this.weatherIcon = data.weather.icon;
-             this.windSpeed = data.wind.speed; 
-             this.windDeg = data.wind.deg; 
+            this.weatherID = data.weather.id;
+            this.weatherMain = data.weather.main;
+            this.weatherDescription = data.wather.description;
+            this.weatherIcon = data.weather.icon;
+            this.windSpeed = data.wind.speed;
+            this.windDeg = data.wind.deg;
 
-             this.clouds = data.clouds.all; 
-             this.rain1h = data.rain.1h; 
-             this.rain3h = data.rain.3h;
-             this.snow1h = data.snow.1h; 
-             this.snow3h = data.snow.3h; 
+            this.clouds = data.clouds.all;
+            //  this.rain1h = data.rain.1h; 
+            //  this.rain3h = data.rain.3h;
+            //  this.snow1h = data.snow.1h; 
+            //  this.snow3h = data.snow.3h; 
 
-             this.lon = data.coord.lon; 
-             this.lat = data.coord.lat; 
-            
+            this.lon = data.coord.lon;
+            this.lat = data.coord.lat;
+
         });
     }
 
-    getWeatherByCityNameAjax(){
+    getWeatherByCityNameAjax() {
         //przykładowe zapytanie porownawcze z AJAXA dla London,uk    ...nie działa:(
         $.ajax({
             method: 'GET',
@@ -76,17 +76,17 @@ class Weather {
             dataType: 'json',
         }).done(r => {
             console.log(r);
-        }).fail( error => {
+        }).fail(error => {
             console.log(error);
         });
     }
 
-    getWeatherByCityID (cityID) {
+    getWeatherByCityID(cityID) {
         let url = `https://api.openweathermap.org/data/2.5/weather?id=2172797&appid=86677a0c14bfe5ca97291ba315d620e6`;
         fetch(url).then(r => r.json).then(data => console.log(data));
     }
 
-    getweatherByCoordinates(lat,lon){
+    getweatherByCoordinates(lat, lon) {
         let url = `https://www.api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}`;
         fetch(url).then(r => r.json).then(data => console.log(data));
     }
