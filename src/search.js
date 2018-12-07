@@ -118,7 +118,7 @@ class Search {
         let text;
         finalTip = document.createElement("H4"); // stworzenie naglowka
         text = document.createTextNode(tip);
-        finalTip.appendChild(text); // dodanie info do naglowka
+        finalTip.appendChild(text); // dodanie info(tekstu) do naglowka
         let results = document.querySelector('#results');
 
         if(this.czyTip==false){
@@ -135,11 +135,16 @@ class Search {
 
 
     loading(isLoading) {
+
         if(isLoading){
-            let loader;
-            loader = '<input type="text" placeholder="Search..." >';
-            loader+= '<div id="loader" class="ui small active loader"></div>';
-            iconinput.innerHTML = loader; //podmiana zawartosci diva (zamiana lupy na ikonke loadera)
+            let lupa = document.querySelector('#lupa');
+            lupa.className = "ui small active loader"; //podmiana na lupy na ikonke loadera
+            lupa.style.left = "90%";
+
+            setTimeout(function(){
+                lupa.className = "inverted circular search link icon"; // po 0.5s powrot do ikonki lupy
+                lupa.style.left = "";
+            }, 500)
         }
     }
 }
