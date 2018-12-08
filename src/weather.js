@@ -24,17 +24,13 @@ class Weather {
         this.windDeg;   // kierunek wiatru,  deg(meteorological)[whatever that is]
 
         this.clouds;    // zachmurzenie , %
-        this.rain1h;    // opady deszczu w przeciągu ostatniej 1 godziny
-        this.rain3h;    // opady deszczu w przeciągu ostatnich 3 godzin
-        this.snow1h;    // opady śniegu w przeciągu ostatniej 1 godziny
-        this.snow3h;    // opady śniegu w przeciągu ostatnich 3 godzin
 
         this.lon;       // szerokość geograficzna
         this.lat;       // długość geogragiczna
     }
 
     getWeatherByCityName(cityName) {
-        let url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&APPID=86677a0c14bfe5ca97291ba315d620e6`;
+        let url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&&units=metric&APPID=86677a0c14bfe5ca97291ba315d620e6`;
         fetch(url).then(r => r.json()).then(data => {
             console.log(data)
 
@@ -49,17 +45,13 @@ class Weather {
             this.mainTempMax = data.temp_max;
 
             this.weatherID = data.weather[0].id;
-            this.weatherMain = data.weather.main;
-            this.weatherDescription = data.weather.description;
-            this.weatherIcon = data.weather.icon;
+            this.weatherMain = data.weather[0].main;
+            this.weatherDescription = data.weather[0].description;
+            this.weatherIcon = data.weather[0].icon;
             this.windSpeed = data.wind.speed;
             this.windDeg = data.wind.deg;
 
             this.clouds = data.clouds.all;
-            // this.rain1h = data.rain.1h;
-            // this.rain3h = data.rain.3h;
-            // this.snow1h = data.snow.1h;
-            // this.snow3h = data.snow.3h;
 
             this.lon = data.coord.lon;
             this.lat = data.coord.lat;
