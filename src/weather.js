@@ -1,5 +1,3 @@
-import { get } from "https";
-
 class Weather {
     constructor() {
         console.log('Weather loaded')
@@ -68,26 +66,13 @@ class Weather {
         });
     }
 
-    getWeatherByCityNameAjax() {
-        //przykładowe zapytanie porownawcze z AJAXA dla London,uk    ...nie działa:(
-        $.ajax({
-            method: 'GET',
-            url: `https://www.api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=86677a0c14bfe5ca97291ba315d620e6`,
-            dataType: 'json',
-        }).done(r => {
-            console.log(r);
-        }).fail(error => {
-            console.log(error);
-        });
-    }
-
     getWeatherByCityID(cityID) {
         let url = `https://api.openweathermap.org/data/2.5/weather?id=2172797&appid=86677a0c14bfe5ca97291ba315d620e6`;
         fetch(url).then(r => r.json).then(data => console.log(data));
     }
 
     getweatherByCoordinates(lat, lon) {
-        let url = `https://www.api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}`;
+        let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}`;
         fetch(url).then(r => r.json).then(data => console.log(data));
     }
 
