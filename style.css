@@ -47,7 +47,9 @@ body {
 
 #mood_text {}
 
-#audio_div {}
+#audio_div {
+    
+}
 
 #spotify {
     margin: 2vh 0;
