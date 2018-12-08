@@ -18,13 +18,13 @@ class Background {
 
         switch (key_word_current) {
             case 800: // clear
-                source_current = 'https://player.vimeo.com/external/214473752.hd.mp4?s=d1d8e4139ab340522a13c44701fcd5a0a593083b&profile_id=119&oauth2_token_id=57447761&download=1'
+                source_current = 'https://player.vimeo.com/external/214473752.hd.mp4?s=d1d8e4139ab340522a13c44701fcd5a0a593083b&profile_id=119&oauth2_token_id=57447761&download=1';
                 break;
             case 801: // cloudy
             case 802:
             case 803:
             case 804:
-                source_current = 'https://player.vimeo.com/external/214473586.hd.mp4?s=5baf5b37e130a7b73cc8538fa2f77a39ff577ff3&profile_id=119&oauth2_token_id=57447761&download=1'
+                source_current = 'https://player.vimeo.com/external/214473586.hd.mp4?s=5baf5b37e130a7b73cc8538fa2f77a39ff577ff3&profile_id=119&oauth2_token_id=57447761&download=1';
                 break;
             case 500: // rain
             case 501:
@@ -39,7 +39,7 @@ class Background {
             case 313:
             case 314:
             case 321:
-                source_current = 'https://player.vimeo.com/external/121353826.hd.mp4?s=ac8848d3e87178f63f4c66c39e9a4a6b4db21924&profile_id=119&oauth2_token_id=57447761&download=1'
+                source_current = 'https://player.vimeo.com/external/121353826.hd.mp4?s=ac8848d3e87178f63f4c66c39e9a4a6b4db21924&profile_id=119&oauth2_token_id=57447761&download=1';
                 break;
             case 502: // heavy rain
             case 503:

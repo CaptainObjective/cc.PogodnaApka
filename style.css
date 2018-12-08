@@ -45,12 +45,6 @@ body {
     margin: 2vh 20vw;
 }
 
-#mood_text {}
-
-#audio_div {
-    
-}
-
 #spotify {
     margin: 2vh 0;
 
@@ -61,5 +55,3 @@ body {
     opacity: 0.9;
 
 }
-
-.header {}
