@@ -7,6 +7,10 @@ class Search {
         this.czyTip = false; // sprawdza czy w results jest już wyświetlone jakies info dla uzytkownika
     }
 
+    // $('input').on('change', _ =>{
+    //
+    // });
+
     checkInput() {
         //TODO: uchwyt do inputa który sprawdzi aktualną wartość i przypisze do this.city
         let miasto = document.querySelector('input');

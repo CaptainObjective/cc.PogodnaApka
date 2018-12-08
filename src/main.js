@@ -24,11 +24,21 @@ const loaded = (e) => {
     // Co ma się zadziać na stronie po załadowaniu
     // TODO: Pobranie lokalizacji i wywowałanie funkcji
     refresh_city();
+
+    //Listener na inpucie sprawdzający cały czas wpisany value i wyszukujący - podpowiadający pierwsze 5 - 10 miast ułożone w kolejnośći alfabetycznej
+    $('input').on('change', e =>{
+
+        console.log(e.currentTarget);
+
+        fetch("../db/city.list.json")
+                        .then( r => r.json() )
+                        .then( cityList => clityList.filter( city => city.name))
+    });
 }
 
 window.addEventListener('load', loaded);
 
-window.addEventListener('keydown', e => {
+window.addEventListener('keyup', e => { // keyup - chcemy, zeby tylko raz nam złapał enter
      e = e || window.event;
 
      if(e.keydown == '13'){
