@@ -51,7 +51,7 @@ class Music {
         spotify.setAttribute('src', source_current);
         spotify.appendChild(source);
 
-        console.log(source_current);
+        // console.log(source_current);
 
     }
 }

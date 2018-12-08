@@ -1,3 +1,4 @@
+import { display_response } from './main'
 class Weather {
     constructor() {
         console.log('Weather loaded')
@@ -55,14 +56,14 @@ class Weather {
             this.windDeg = data.wind.deg;
 
             this.clouds = data.clouds.all;
-            //  this.rain1h = data.rain.1h; 
-            //  this.rain3h = data.rain.3h;
-            //  this.snow1h = data.snow.1h; 
-            //  this.snow3h = data.snow.3h; 
+            // this.rain1h = data.rain.1h;
+            // this.rain3h = data.rain.3h;
+            // this.snow1h = data.snow.1h;
+            // this.snow3h = data.snow.3h;
 
             this.lon = data.coord.lon;
             this.lat = data.coord.lat;
-
+            display_response();
         });
     }
 
@@ -76,10 +77,10 @@ class Weather {
         fetch(url).then(r => r.json).then(data => console.log(data));
     }
 
-    query() {
+    query(city) {
         // TODO wykonanie zapytania do API i przypisania odpowiedzi do atrybutów
         // Na razie testowo w
-        this.getWeatherByCityName('London');
+        this.getWeatherByCityName(city);
         // this.getWeatherByCityID();
         // this.getWeatherByCityNameAjax();
 
