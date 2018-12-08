@@ -27,4 +27,11 @@ const loaded = (e) => {
 }
 
 window.addEventListener('load', loaded);
-window.addEventListener('keypressed', refresh_city); // Trzeba to zrobić tak żeby działał tylko na enter, wskazówka jest w tetrisie :D
+
+window.addEventListener('keydown', e => {
+     e = e || window.event;
+
+     if(e.keydown == '13'){
+         refresh_city();
+     }
+}); // Trzeba to zrobić tak żeby działał tylko na enter, wskazówka jest w tetrisie :D
