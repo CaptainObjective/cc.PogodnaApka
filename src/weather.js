@@ -48,7 +48,7 @@ class Weather {
             this.mainTempMin = data.temp_min;
             this.mainTempMax = data.temp_max;
 
-            this.weatherID = data.weather.id;
+            this.weatherID = data.weather[0].id;
             this.weatherMain = data.weather.main;
             this.weatherDescription = data.weather.description;
             this.weatherIcon = data.weather.icon;

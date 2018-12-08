@@ -20,6 +20,7 @@ const refresh_city = () => {
 
 const display_response = () => {
     results.refresh(weather);
+    console.log(weather);
     background.refresh(weather);
     // search.showTip(search.refresh(weather.mainTemp, weather.mainHumidity, data.clouds.all));
     music.refresh(weather);
