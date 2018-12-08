@@ -61,3 +61,16 @@ body {
 }
 
 .header {}
+.results{
+    margin: 2vh 2vw;
+    display: block;
+  
+}
+
+
+#mainPressure{};
+#mainHumidity{};
+#windSpeed{};
+#clouds{};
+#rain1h{};
+#snow1h{};
