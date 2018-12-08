@@ -42,7 +42,7 @@ class Weather {
             this.countryCode = data.sys.country;
             this.sunrise = data.sys.sunrise;
             this.sunset = data.sys.sunset;
-            this.mainTemp = data.main.temp;
+            this.mainTemp = ((data.main.temp).toFixed(2)-273.15);  // from Kelvin to Celsius - two decimal point
             this.mainPressure = data.main.pressure;
             this.mainHumidity = data.main.humidity;
             this.mainTempMin = data.temp_min;

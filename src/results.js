@@ -6,7 +6,7 @@ class Results {
         // TODO: Podmiana tego co siedzi w html w oparciu o właściwosci otrzymanego obiektu
         // console.log(cityName);
         let handler = document.getElementById('mainbar');
-        handler.innerHTML = `${cityName} ${mainTemp-273.15} &#8451`
+        handler.innerHTML = `${cityName} ${mainTemp} &#8451`
     }
 }
 
