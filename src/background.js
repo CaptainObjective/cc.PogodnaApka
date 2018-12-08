@@ -1,3 +1,6 @@
+// TO DO: 
+// 1. [opcjonalnie] Pobieranie czasu i na podstawie tego zmiana dzien/noc - więcej teł 
+// 2. [must do] podmienić zmienną na zmienną z API - weatherID zamiast weather i key_word_current
 class Background {
 
     refresh(weather) {
@@ -60,7 +63,3 @@ class Background {
 }
 
 export default Background;
-
-// <!-- TO DO: 
-// 1. Pobieranie czasu i na podstawie tego zmiana dzien/noc - więcej teł 
-// // 3. podmienić zmienną na zmienną z API, i rzeczy z tym związane
