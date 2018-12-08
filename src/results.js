@@ -1,5 +1,5 @@
 
-let icon = document.getElementById("icon");
+let weatherIcon = document.getElementById("icon");
 let mainbar = document.getElementById("mainbar");
 let mainPressure = document.getElementById("mainPressure");
 let mainHumidity = document.getElementById("mainHumidity");
@@ -12,24 +12,48 @@ class Results {
     constructor() {
         console.log('Results loadedb nevovnfenvenvevno')
     }
-    refresh() {
-        const weather = {};
-        weather.cityName = "Wroclaw";
-        console.log(weather.cityName);
-        weather.mainTemp = "100";
-        console.log(mainbar);
+    refresh(weather) {
         // TODO: Podmiana tego co siedzi w html w oparciu o właściwosci otrzymanego obiektu
+        weather.cityName = "Wroclaw";
+        weather.mainTemp = 100;
+        weather.mainPressure = 1000;
+        weather.mainHumidity = 2;
+        weather.windSpeed = 56;
+        weather.clouds = 2;
+        weather.rain1h = 33;
+        weather.snow1h = 33;
+        weather.weatherIcon = "snowflake";
 
-        // icon = `< i class = "${icon} icon" >< /i>`; // zmienna ma się ładnie podmieniać aby ładowała się stosowna ikona semantic
-        mainbar.innerHTML = `${weather.mainTemp}&#8451  ${weather.cityName}`; //odświeżenie temp + nazwy miasta
-        console.log(weather.mainTemp & weather.cityName);
+       // const icon = [sun, snow, rain, cloud]; //sprawdzić nazwy ikon w API
 
-        // mainPressure.innerHTML = weather.mainPressure + "hPa";
-        // mainHumidity.innerHTML = weather.mainHumidity + "%";
-        // windSpeed.innerHTML = weather.windSpeed + "km/h";
-        // clouds.innerHTML = weather.clouds + "%";
-        // rain1h.innerHTML = weather.rain1h + "%";
-        // snow1h.innerHTML = weather.snow1h + "%";
+       // switch(weather.weatherIcon){
+       //     case sun:
+       //         weather.weatherIcon = "sun"
+       //     break;
+       //     case snow:
+       //         weather.weatherIcon = "snowflake"
+       //      break;
+       //      case rain:
+       //          weather.weatherIcon = "umbrella"
+       //      break;
+       //      case cloud:
+       //          weather.weatherIcon = "cloud"
+       //          break;
+       // }
+        
+        weatherIcon = `< i class = "${weather.weatherIcon} icon" >< /i>`; // zmienna ma się ładnie podmieniać aby ładowała się stosowna ikona semantic
+        mainbar.innerHTML = `${weather.mainTemp}&#8451  ${weather.cityName}`; //temp + miasto
+        mainPressure.innerHTML = `Ciśnienie: ${weather.mainPressure} hPa`; //ciśnienie
+        mainHumidity.innerHTML = `Wilgotność powietrza: ${weather.mainHumidity}%`; //wilgotność
+        windSpeed.innerHTML = `Prędkość wiatru: ${weather.windSpeed} m/s`; //wiaterek
+        clouds.innerHTML = `Zachmurzenie: ${weather.clouds}%`; //zachmurzenie
+        rain1h.innerHTML = `Opady deszczu w przeciągu 1h: ${weather.rain1h}%`; //deszcz 1h
+        snow1h.innerHTML = `Opady śniegu w przeciągu 1h: ${weather.snow1h}%`; //śnieg 1h
+
+
+        
+
+
     }
 }
 

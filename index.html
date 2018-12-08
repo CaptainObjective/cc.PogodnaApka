@@ -10,37 +10,26 @@
 
 <body>
     <div id="wrapper">
-        <div id="results" class="ui segment"><div id = "mainPressure"></div> 
-
-                    <div id = "mainHumidity"></div>
-                    <div id = "windSpeed"></div>
-                    <div id = "clouds"></div>
-                    <div id = "rain1h"></div>
-                    <div id ="snow1h"></div>
-
-            <div id = "mainPressure"></div> 
-                    <div id = "mainHumidity"></div>
-                    <div id = "windSpeed"></div>
-                    <div id = "clouds"></div>
-                    <div id = "rain1h"></div>
-                    <div id ="snow1h"></div>
-            <i id="icon" class="huge snowflake icon"></i> 
-            <!-- <h1 id="mainbar" class="ui header">20 &#8451 <div id = "cityname">Nazwa miasta</div></h1> -->
-            <h1 id="mainbar" class="ui header">20 &#8451 </h1>
+        <div id="results" class="ui segment">
+            <!-- <i id="icon" class="huge snowflake icon"></i> -->
+            <i id="icon"></i>
+            <h1 id="mainbar" class="ui header"></h1>
         </div>
         <div id="search" class="ui segment content">
             <div class="ui icon input">
                 <input type="text" placeholder="Search...">
                 <i class="inverted circular search link icon"></i>
             </div>
-        
+        </div>
+        <div class="results">
+            <div id="mainPressure"></div>
+            <div id="mainHumidity"></div>
+            <div id="windSpeed"></div>
+            <div id="clouds"></div>
+            <div id="rain1h"></div>
+            <div id="snow1h"></div>
         </div>
     </div>
-
-
-    </div>
-
-
 
     <script src="app.js"></script>
     <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
