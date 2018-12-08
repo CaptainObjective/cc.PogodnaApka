@@ -52,13 +52,13 @@ class Background {
                 }
 
         }
-        console.log(key_word_current);
+        // console.log(key_word_current);
         // nadaj atrybut src o wartości zmiennej source_current
         source.setAttribute('src', source_current);
         video.appendChild(source);
         video.load();
         video.play();
-        console.log(source_current);
+        // console.log(source_current);
     }
 }
 

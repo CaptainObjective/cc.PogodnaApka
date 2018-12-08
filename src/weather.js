@@ -51,7 +51,7 @@ class Weather {
 
             this.weatherID = data.weather.id;
             this.weatherMain = data.weather.main;
-            this.weatherDescription = data.wather.description;
+            this.weatherDescription = data.weather.description;
             this.weatherIcon = data.weather.icon;
             this.windSpeed = data.wind.speed;
             this.windDeg = data.wind.deg;
