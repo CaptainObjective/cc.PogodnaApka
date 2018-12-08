@@ -13,7 +13,7 @@ const weather = new Weather;
 const refresh_city = () => {
 
     search.checkInput();
-    weather.query();
+    weather.query(search.city);
     background.refresh(weather);
     results.refresh(weather);
     search.refresh(weather);
