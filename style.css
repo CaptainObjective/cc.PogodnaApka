@@ -41,7 +41,7 @@ body {
 }
 
 #mood {
-    
+
     margin: 2vh 20vw;
 }
 
@@ -57,8 +57,7 @@ body {
 .content,
 .segment {
     opacity: 0.9;
-   
+
 }
-.header{
-    
-}
+
+.header {}

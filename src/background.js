@@ -1,66 +1,61 @@
 class Background {
-    constructor() {
-        console.log('Background loaded')
-    }
+
     refresh(weather) {
         // tablica, którą ma zastąpić info z API
-let key_word = [1, 2, 3, 4, 5, 6, 7, 8];
-// losowanie z tablicy
-let key_word_current = key_word[Math.floor(Math.random() * key_word.length)];
-console.log(key_word_current_js);
-let video = document.getElementById('video-background');
-let source = document.createElement('source');
-// wartość defaultowa zmiennej, która odpowiada za src wyświetlanego tła 
-let source_current = 'https://player.vimeo.com/external/206536398.hd.mp4?s=6890b433df51fc5e7456fea2d025268b316fd2c9&profile_id=119&oauth2_token_id=57447761&download=1';
+        let key_word = [200, 201, 202, 210, 211, 212, 221, 230, 231, 232, 300, 301, 302, 310, 311, 312, 313, 314, 321, 500, 501, 511, 520, 502, 503, 504, 521, 522, 531, 600, 601, 602, 611, 612, 615, 616, 620, 621, 622, 800, 801, 802, 803, 804];
 
-//losowanie z tablicy, jaki link będzie w src tła (deszcz/śnieg/słonce,etc.)
-switch (key_word_current) {
-    case 1:
-        {
+        let key_word_current = key_word[Math.floor(Math.random() * key_word.length)];
+
+        let video = document.getElementById('video-background');
+        let source = document.createElement('source');
+        // wartość defaultowa zmiennej, która odpowiada za src wyświetlanego tła 
+        let source_current;
+
+        //losowanie z tablicy, jaki link będzie w src tła (deszcz/śnieg/słonce,etc.)
+        switch (key_word_current) {
+            case 800: // clear
+                {
+                    source_current = 'https://player.vimeo.com/external/206536398.hd.mp4?s=6890b433df51fc5e7456fea2d025268b316fd2c9&profile_id=119&oauth2_token_id=57447761&download=1'
+                }
+                break;
+            case 801, 802, 803, 804: // cloudy
+                {
+                    source_current = 'https://player.vimeo.com/external/214473586.hd.mp4?s=5baf5b37e130a7b73cc8538fa2f77a39ff577ff3&profile_id=119&oauth2_token_id=57447761&download=1'
+                }
+                break;
+            case 500, 501, 511, 520, 300, 301, 302, 310, 311, 312, 313, 314, 321: // rain
+                {
+                    source_current = 'https://player.vimeo.com/external/121353826.hd.mp4?s=ac8848d3e87178f63f4c66c39e9a4a6b4db21924&profile_id=119&oauth2_token_id=57447761&download=1'
+                }
+                break;
+            case 502, 503, 504, 521, 522, 531: // heavy rain
+                {
+                    source_current = 'https://player.vimeo.com/external/122626677.hd.mp4?s=2dded1e892724fadf077bb60862d9ccba65314e6&profile_id=113&oauth2_token_id=57447761&download=1'
+                }
+                break;
+            case 600, 601, 602, 611, 612, 615, 616, 620, 621, 622: // snow
+                {
+                    source_current = 'https://player.vimeo.com/external/210744027.hd.mp4?s=3b213fa305d8ac5bd2b38a6663d7d50e3b006759&profile_id=119&oauth2_token_id=57447761&download=1'
+                }
+                break;
+            case 200, 201, 202, 210, 211, 212, 221, 230, 231, 232:
+                {
+                    source_current = 'https://player.vimeo.com/external/291718076.hd.mp4?s=c45c1735a98e2e7b7f0cb67ebcae5393cf82003a&profile_id=175&oauth2_token_id=57447761&download=1'
+                }
+                break;
+            default:
+                {
+                    source_current = 'https://player.vimeo.com/external/206536398.hd.mp4?s=6890b433df51fc5e7456fea2d025268b316fd2c9&profile_id=119&oauth2_token_id=57447761&download=1'
+                }
 
         }
-        break;
-    case 2:
-        {
-            source_current = 'https://player.vimeo.com/external/214473586.hd.mp4?s=5baf5b37e130a7b73cc8538fa2f77a39ff577ff3&profile_id=119&oauth2_token_id=57447761&download=1'
-        }
-        break;
-    case 3:
-        {
-            source_current = 'https://player.vimeo.com/external/121353826.hd.mp4?s=ac8848d3e87178f63f4c66c39e9a4a6b4db21924&profile_id=119&oauth2_token_id=57447761&download=1'
-        }
-        break;
-    case 4:
-        {
-            source_current = 'https://player.vimeo.com/external/286339861.hd.mp4?s=2779700ff2c2ec142daae7c9209134365f3befe8&profile_id=175&oauth2_token_id=57447761&download=1'
-        }
-        break;
-    case 5:
-        {
-            source_current = 'https://player.vimeo.com/external/210744027.hd.mp4?s=3b213fa305d8ac5bd2b38a6663d7d50e3b006759&profile_id=119&oauth2_token_id=57447761&download=1'
-        }
-        break;
-    case 6:
-        {
-            source_current = 'https://player.vimeo.com/external/198105695.hd.mp4?s=4e38208306638b2f9c908f638bfdc3bdd777ceb9&profile_id=174&oauth2_token_id=57447761&download=1'
-        }
-        break;
-    case 7:
-        {
-            source_current = 'https://player.vimeo.com/external/293913779.hd.mp4?s=4c681cbaf3ac15404c362417ca670601519b58e6&profile_id=175&oauth2_token_id=57447761&download=1'
-        }
-        break;
-    case 8:
-        {
-            source_current = 'https://player.vimeo.com/external/191381877.hd.mp4?s=d1f420d131fd7fdf6cfbe28e77b62da206afc90b&profile_id=119&oauth2_token_id=57447761&download=1'
-        }
-        break;
-}
-// nadaj atrybut src o wartości zmiennej source_current
-source.setAttribute('src', source_current);
-video.appendChild(source);
-video.load();
-video.play();
+        console.log(key_word_current);
+        // nadaj atrybut src o wartości zmiennej source_current
+        source.setAttribute('src', source_current);
+        video.appendChild(source);
+        video.load();
+        video.play();
+        console.log(source_current);
     }
 }
 
@@ -68,6 +63,4 @@ export default Background;
 
 // <!-- TO DO: 
 // 1. Pobieranie czasu i na podstawie tego zmiana dzien/noc - więcej teł 
-// // 2. dopracować losowanie utworów, wyśrodkować i dodać więcej 
-// // 3. podmienić zmienną na zmienną z API, i rzeczy z tym związane 
-// 3.1. Doczytać OOP 
+// // 3. podmienić zmienną na zmienną z API, i rzeczy z tym związane
