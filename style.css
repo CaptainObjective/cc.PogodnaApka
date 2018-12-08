@@ -19,3 +19,14 @@ body{
     display: inline;
 
 }
+.results{
+    display: flex;
+}
+
+
+#mainPressure{};
+#mainHumidity{};
+#windSpeed{};
+#clouds{};
+#rain1h{};
+#snow1h{};
