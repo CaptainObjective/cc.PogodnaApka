@@ -5,11 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <title>Weather App</title>
 </head>
 
 <body>
+
     <div id="wrapper">
+        <video autoplay loop id="video-background" muted plays-inline>
+        </video>
+
+
         <div id="results" class="ui segment">
             <i id="icon" class="huge snowflake icon"></i>
             <h1 id="mainbar" class="ui header">20 &#8451 Nazwa miasta</h1>
@@ -21,19 +27,41 @@
             </div>
             <div class="results"></div>
         </div>
+
+
+
+
+
+        <div id="mood" class="ui segment">
+            <h2 id="mood_text" class="ui header">
+                <div class="content">
+
+                    Poczuj tę pogodę przez piosenkę!
+                    <div class="sub header">Wybraliśmy dla Ciebie utwór, który pasuje do obecnej pogody</div>
+                    <div id="audio_div" class="content">
+                        <iframe id="spotify" width="300" height="380" frameborder="0" allowtransparency="false" allow="encrypted-media"></iframe>
+                    </div>
+                </div>
+            </h2>
+        </div>
+
+
+
     </div>
 
 
-    </div>
 
 
 
     <script src="app.js"></script>
     <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
+
+
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
         crossorigin="anonymous"></script>
     <script src="semantic/dist/semantic.min.js"></script>
+
 </body>
 
 </html>

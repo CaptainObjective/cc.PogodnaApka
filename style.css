@@ -1,21 +1,63 @@
-body{
+body {
     background: skyblue;
+    margin: 0;
+    padding: 0;
+    background-attachment: fixed;
+    background-size: cover;
 }
 
-#wrapper{
+#wrapper {
     width: 100%;
-}
-
-#results{
-    margin: 2vh 2vw;
-}
-#search{
-    margin: 2vh 2vw;
-}
-#ikonka{
-    display: inline;
-}
-#mainbar{
-    display: inline;
 
 }
+
+#video-background {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    /* filter: blur(4px); */
+}
+
+#results {
+    margin: 2vh 20vw;
+}
+
+#search {
+    margin: 2vh 20vw;
+}
+
+#ikonka {
+    display: inline;
+}
+
+#mainbar {
+    display: inline;
+
+}
+
+#mood {
+
+    margin: 2vh 20vw;
+}
+
+#mood_text {}
+
+#audio_div {}
+
+#spotify {
+    margin: 2vh 0;
+
+}
+
+.content,
+.segment {
+    opacity: 0.9;
+
+}
+
+.header {}
