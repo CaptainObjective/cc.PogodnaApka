@@ -15,7 +15,7 @@ const refresh_city = () => {
     search.checkInput();
     weather.query();
     background.refresh(weather);
-    results.refresh(weather);
+    results.refresh();
     search.refresh(weather);
     // TODO: Jak bartek zrobi to trzeba będzie obsłużyć loadery
 }
