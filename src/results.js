@@ -7,8 +7,6 @@ let windSpeed = document.getElementById("windSpeed");
 let windDeg = document.getElementById("windDeg");
 let clouds = document.getElementById("clouds");
 
-
-
 class Results {
     constructor() {
         console.log('Results')
@@ -62,11 +60,6 @@ class Results {
         windDeg.innerHTML = `Kierunek wiatru: ${weather.windDeg} deg`; //wiaterek kierunek
         clouds.innerHTML = `Zachmurzenie: ${weather.clouds}%`; //zachmurzenie
        
-
-
-
-
-
     }
 }
 

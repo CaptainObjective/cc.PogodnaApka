@@ -16,6 +16,7 @@ const refresh_city = () => {
     console.log('They see me rolling I am Searching')
     search.checkInput();
     weather.query(search.city);
+
 }
 
 const display_response = () => {
@@ -40,7 +41,15 @@ const loaded = (e) => {
     //     console.log("Geolocation is not allowed");
     //     refresh_city();
     // }
+    $('.input')
+        .transition({
+            animation: 'swing down in',
+            duration: '3s',
+
+        });
+
     refresh_city();
+
 }
 
 window.addEventListener('load', loaded);
@@ -49,5 +58,6 @@ document.getElementById('search').addEventListener('keypress', (e) => e.key == '
 
 window.addEventListener('keypressed', refresh_city);
 
-export { display_response };
-
+export {
+    display_response
+};

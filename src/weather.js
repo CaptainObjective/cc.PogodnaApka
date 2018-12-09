@@ -79,6 +79,7 @@ class Weather {
         // this.getWeatherByCityNameAjax();
 
     }
+    
 }
 
 export default Weather;
