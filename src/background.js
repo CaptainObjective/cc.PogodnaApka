@@ -1,26 +1,25 @@
 // TO DO: 
-// 1. Pobieranie czasu i na podstawie tego zmiana dzien/noc - więcej teł 
 // 2. replace w spotify
 
 class Background {
 
     refresh({
-        weatherID
+        weatherID,
+        sunset
     }) {
-        let key_word_current = weatherID;
+        let key_word_current = weatherID; // pobieranie odpowiedniego weatherID z API określającego warunek pogodowy do zmiennej 
 
         let video = document.getElementById('video-background');
         let source = document.createElement('source');
-
+        let source_current; // deklaracja zmiennej, która będzie podmieniać src tła 
         let d = new Date();
-        let hour = d.getHours();
-        let source_current;
+        let hour = d.getHours(); // pobranie godziny z systemu
+        let sunsetround = sunset / 100000000; // pobranie godziny zachodu słonca z API i przyciecie 
 
-        if (hour < 18 && hour > 6)
+        if (hour < sunsetround && hour > 6) // switch tla, jesli mamy dzien 
         //dzien
         {
 
-            //losowanie z tablicy, jaki link będzie w src tła (deszcz/śnieg/słonce,etc.)
             switch (key_word_current) {
                 case 800: // clear
                     source_current = 'https://player.vimeo.com/external/214473752.hd.mp4?s=d1d8e4139ab340522a13c44701fcd5a0a593083b&profile_id=119&oauth2_token_id=57447761&download=1';
@@ -158,8 +157,7 @@ class Background {
             }
         }
 
-        // nadaj atrybut src o wartości zmiennej source_current
-        source.setAttribute('src', source_current);
+        source.setAttribute('src', source_current); // nadajemy atrybut src o wartości zmiennej source_current
         video.replaceChild(source, video.childNodes[0]);
         video.load();
         video.play();

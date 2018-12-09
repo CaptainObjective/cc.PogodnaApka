@@ -4,12 +4,12 @@ class Music {
         weatherID
     }) {
 
-        let key_word_current = weatherID;
+        let key_word_current = weatherID; // pobieranie odpowiedniego weatherID z API określającego warunek pogodowy do zmiennej
 
         let spotify = document.getElementById('spotify');
         let source = document.createElement('source');
-        let source_current;
-
+        let source_current; // deklaracja zmiennej, która będzie podmieniać src tła 
+        // switch src muzyki w zaleznosci od weatherID
         switch (key_word_current) {
             case 800: // clear
                 source_current = 'https://open.spotify.com/embed/track/1PCovxh1enX1NPfaLt4YWG';
@@ -77,11 +77,8 @@ class Music {
 
         }
 
-        // nadaj atrybut src o wartości zmiennej source_current
-        spotify.setAttribute('src', source_current);
+        spotify.setAttribute('src', source_current); // nadajemy atrybut src spotify o wartości zmiennej source_current
         spotify.appendChild(source); // Jednak inaczej to wygląda w przypadku Spotify należałoby stworzyć iframe nie src, do Poprawki (zmieniłem na appendChild tylko by nie generowalo błędu)
-
-        // console.log(source_current);
 
     }
 }
