@@ -45,11 +45,9 @@ const loaded = (e) => {
         .transition({
             animation: 'swing down in',
             duration: '3s',
-
         });
 
     refresh_city();
-
 }
 
 window.addEventListener('load', loaded);

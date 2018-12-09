@@ -38,8 +38,10 @@ class Weather {
 
             this.cityName = data.name;
             this.countryCode = data.sys.country;
-            this.sunrise = data.sys.sunrise;
-            this.sunset = data.sys.sunset;
+
+            this.sunrise = new Date(data.sys.sunrise * 1000);
+            this.sunset = new Date(data.sys.sunset * 1000);
+
             this.mainTemp = data.main.temp;
             this.mainPressure = data.main.pressure;
             this.mainHumidity = data.main.humidity;
@@ -72,13 +74,21 @@ class Weather {
     }
 
     query(city) {
-        // TODO wykonanie zapytania do API i przypisania odpowiedzi do atrybutów
-        // Na razie testowo w
         this.getWeatherByCityName(city);
-        // this.getWeatherByCityID();
-        // this.getWeatherByCityNameAjax();
 
     }
+    // sunrise(sunriseTime) {
+    //     let now = new Date();
+    //     this.sunrise = new Date(sunriseTime * 1000);
+    //     // this.fromSunrise = Date(now - this.sunrise).toLocaleTimeString();
+
+    // }
+
+    // sunset(sunsetTime) {
+    //     let now = new Date();
+    //     this.sunset = new Date(sunsetTime * 1000);
+    //     // this.toSunSet = Date(sunset - now).toLocaleTimeString();
+    // }
     
 }
 
