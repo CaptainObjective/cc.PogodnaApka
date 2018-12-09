@@ -11,6 +11,96 @@ const search = new Search;
 const weather = new Weather;
 const music = new Music;
 
+// let content = fetch("db/city.list.json")
+// .then( r => r.json)
+// .then( cityList => cityList.map(city => {
+//     {name: city.name}
+// }))
+// .then( result => console.log(result));
+
+
+// ROZPAKOWYWANIE JSONA do Tablicy tylko z nazwami miast - do wyszukiwania / podpowiadania w searchu
+
+// let content = $.getJSON("city.list.json", data => {
+//     data.map( city => {
+//         return {name: city.name}
+//     })
+// });
+
+let content = content = [{
+        title: 'Andorra'
+    },
+    {
+        title: 'United Arab Emirates'
+    },
+    {
+        title: 'Afghanistan'
+    },
+    {
+        title: 'Antigua'
+    },
+    {
+        title: 'Anguilla'
+    },
+    {
+        title: 'Albania'
+    },
+    {
+        title: 'Armenia'
+    },
+    {
+        title: 'Netherlands Antilles'
+    },
+    {
+        title: 'Angola'
+    },
+    {
+        title: 'Argentina'
+    },
+    {
+        title: 'American Samoa'
+    },
+    {
+        title: 'Austria'
+    },
+    {
+        title: 'Australia'
+    },
+    {
+        title: 'Aruba'
+    },
+    {
+        title: 'Aland Islands'
+    },
+    {
+        title: 'Azerbaijan'
+    },
+    {
+        title: 'Bosnia'
+    },
+    {
+        title: 'Barbados'
+    },
+    {
+        title: 'Bangladesh'
+    },
+    {
+        title: 'Belgium'
+    },
+    {
+        title: 'Burkina Faso'
+    },
+    {
+        title: 'Bulgaria'
+    },
+    {
+        title: 'Bahrain'
+    },
+    {
+        title: 'Burundi'
+    }
+];
+
 const refresh_city = () => {
 
     console.log('They see me rolling I am Searching')
@@ -41,6 +131,11 @@ const loaded = (e) => {
     //     refresh_city();
     // }
     refresh_city();
+    console.log(content);
+    $('.ui.search').search({
+        source : content
+    });
+
 }
 
 window.addEventListener('load', loaded);
