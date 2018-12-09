@@ -17,7 +17,7 @@ class Search {
         }
     }
 
-    refresh(temp, rain, snow, clouds) {
+    refresh(temp, rain=0, snow=0, clouds=0) {
         // TODO: info dla użytkownika na podstawie pogody
         let tip;
 
