@@ -1,32 +1,34 @@
-import { display_response } from './main'
+import {
+    display_response
+} from './main'
 class Weather {
     constructor() {
         console.log('Weather loaded')
 
         // TODO: na wzór tego utworzyć atrybuty które moga się przydać, w zalezności od tego co jest w API ofc
-        this.cityName;     // nazwa miasta - kiedy byśmy chcieli zwróć po wyszukaniu przez lon, lat na przykład
-        this.countryCode;  // kod kraju ie. GP,JP
-        this.sunrise;      // czas wschodu słońca
-        this.sunset;      // czas zachodu słońca
+        this.cityName; // nazwa miasta - kiedy byśmy chcieli zwróć po wyszukaniu przez lon, lat na przykład
+        this.countryCode; // kod kraju ie. GP,JP
+        this.sunrise; // czas wschodu słońca
+        this.sunset; // czas zachodu słońca
 
-        this.mainTemp;        // temperatura, K
-        this.mainPressure;    // ciśnienie stmosferyczne - nad poziomeme morze lub nad powierzchnią ziemi
-        this.mainHumidity;    // wilgotność powietrza, %
-        this.mainTempMin;     // minimalna temperatura w danym momencie - różnić się może od głównej temperatury dla dużych miast(opcjonalne)
-        this.mainTempMax;     // maksymalna temperatura w danym momencie - różnić się może od głównej temperatury dla dużych miast(opcjonalne)
+        this.mainTemp; // temperatura, K
+        this.mainPressure; // ciśnienie stmosferyczne - nad poziomeme morze lub nad powierzchnią ziemi
+        this.mainHumidity; // wilgotność powietrza, %
+        this.mainTempMin; // minimalna temperatura w danym momencie - różnić się może od głównej temperatury dla dużych miast(opcjonalne)
+        this.mainTempMax; // maksymalna temperatura w danym momencie - różnić się może od głównej temperatury dla dużych miast(opcjonalne)
 
-        this.weatherID;       // id danej pogody
-        this.weatherMain;     // grupa parametrow (Rain, Snow, Extreme)
-        this.weatherDescription;    // opis pogody in english
-        this.weatherIcon;   // 
+        this.weatherID; // id danej pogody
+        this.weatherMain; // grupa parametrow (Rain, Snow, Extreme)
+        this.weatherDescription; // opis pogody in english
+        this.weatherIcon; // 
 
         this.windSpeed; // prędkość wiatru,  m/s
-        this.windDeg;   // kierunek wiatru,  deg(meteorological)[whatever that is]
+        this.windDeg; // kierunek wiatru,  deg(meteorological)[whatever that is]
 
-        this.clouds;    // zachmurzenie , %
+        this.clouds; // zachmurzenie , %
 
-        this.lon;       // szerokość geograficzna
-        this.lat;       // długość geogragiczna
+        this.lon; // szerokość geograficzna
+        this.lat; // długość geogragiczna
     }
 
     getWeatherByCityName(cityName) {

@@ -1,9 +1,10 @@
 class Music {
 
-    refresh(weather) {
-        let key_word = [200, 201, 202, 210, 211, 212, 221, 230, 231, 232, 300, 301, 302, 310, 311, 312, 313, 314, 321, 500, 501, 511, 520, 502, 503, 504, 521, 522, 531, 600, 601, 602, 611, 612, 615, 616, 620, 621, 622, 800, 801, 802, 803, 804];
+    refresh({
+        weatherID
+    }) {
 
-        let key_word_current = key_word[Math.floor(Math.random() * key_word.length)];
+        let key_word_current = weatherID;
 
         let spotify = document.getElementById('spotify');
         let source = document.createElement('source');
@@ -11,45 +12,74 @@ class Music {
 
         switch (key_word_current) {
             case 800: // clear
-                {
-                    source_current = 'https://open.spotify.com/embed/track/1PCovxh1enX1NPfaLt4YWG';
-                }
+                source_current = 'https://open.spotify.com/embed/track/1PCovxh1enX1NPfaLt4YWG';
                 break;
-            case 801, 802, 803, 804: // cloudy
-                {
-                    source_current = 'https://open.spotify.com/embed/track/3mr584ZFSkZrWja9kJAzlb'
-                }
+            case 801: // cloudy
+            case 802:
+            case 803:
+            case 804:
+                source_current = 'https://open.spotify.com/embed/track/3ww7sj1QovjTsGAjnHpiPU';
                 break;
-            case 500, 501, 511, 520, 300, 301, 302, 310, 311, 312, 313, 314, 321: // rainy
-                {
-                    source_current = 'https://open.spotify.com/embed/track/113v1MA9MTShy98uCz37nO'
-                }
+            case 500: // rain
+            case 501:
+            case 511:
+            case 520:
+            case 300:
+            case 301:
+            case 302:
+            case 310:
+            case 311:
+            case 312:
+            case 313:
+            case 314:
+            case 321:
+                source_current = 'https://open.spotify.com/embed/track/113v1MA9MTShy98uCz37nO';
                 break;
-            case 502, 503, 504, 521, 522, 531: // heavy rain
-                {
-                    source_current = 'https://open.spotify.com/embed/track/4rhcqdXTzNX9uZRZybj3UP'
-                }
+            case 502: // heavy rain
+            case 503:
+            case 504:
+            case 521:
+            case 522:
+            case 531:
+
+                source_current = 'https://open.spotify.com/embed/track/4rhcqdXTzNX9uZRZybj3UP';
                 break;
-            case 600, 601, 602, 611, 612, 615, 616, 620, 621, 622: // snow
-                {
-                    source_current = 'https://open.spotify.com/embed/track/2IprIjGNRlj3TfqUWCAo0C'
-                }
+            case 600: // snow
+            case 601:
+            case 602:
+            case 611:
+            case 612:
+            case 615:
+            case 616:
+            case 620:
+            case 621:
+            case 622:
+
+                source_current = 'https://open.spotify.com/embed/track/2IprIjGNRlj3TfqUWCAo0C';
+
                 break;
-            case 200, 201, 202, 210, 211, 212, 221, 230, 231, 232: // thunder 
-                {
-                    source_current = 'https://open.spotify.com/embed/track/3mr584ZFSkZrWja9kJAzlb'
-                }
+            case 200: // thunder
+            case 201:
+            case 202:
+            case 210:
+            case 211:
+            case 212:
+            case 221:
+            case 230:
+            case 231:
+            case 232:
+
+                source_current = 'https://open.spotify.com/embed/track/3mr584ZFSkZrWja9kJAzlb';
+
                 break;
             default:
-                {
-                    source_current = 'https://open.spotify.com/embed/track/1PCovxh1enX1NPfaLt4YWG';
-                }
+                source_current = 'https://open.spotify.com/embed/track/1PCovxh1enX1NPfaLt4YWG';
 
         }
 
         // nadaj atrybut src o wartości zmiennej source_current
         spotify.setAttribute('src', source_current);
-        spotify.appendChild(source);
+        spotify.appendChild(source); // Jednak inaczej to wygląda w przypadku Spotify należałoby stworzyć iframe nie src, do Poprawki (zmieniłem na appendChild tylko by nie generowalo błędu)
 
         // console.log(source_current);
 
