@@ -58,7 +58,7 @@ body {
 
 #mainbar {
     display: inline;
-    
+
 }
 
 #mood {
@@ -84,7 +84,8 @@ body {
     line-height: 300%;
 
 }
-.search{
+
+.search {
     display: flex;
     flex-direction: column;
     justify-content: center;

@@ -15,7 +15,7 @@ class Background {
         let source_current; // deklaracja zmiennej, która będzie podmieniać src tła 
         let d = new Date();
         let hour = d.getHours(); // pobranie godziny z systemu
-        
+
         if (hour < sunset && hour > sunrise) // switch tla, jesli mamy dzien 
         //dzien
         {

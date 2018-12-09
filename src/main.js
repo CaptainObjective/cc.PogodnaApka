@@ -140,7 +140,7 @@ const loaded = (e) => {
     refresh_city();
     console.log(content);
     $('.ui.search').search({
-        source : content
+        source: content
     });
 
 }
