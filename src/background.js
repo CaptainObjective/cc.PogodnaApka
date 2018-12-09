@@ -5,7 +5,8 @@ class Background {
 
     refresh({
         weatherID,
-        sunset
+        sunset,
+        sunrise
     }) {
         let key_word_current = weatherID; // pobieranie odpowiedniego weatherID z API określającego warunek pogodowy do zmiennej 
 
@@ -14,9 +15,8 @@ class Background {
         let source_current; // deklaracja zmiennej, która będzie podmieniać src tła 
         let d = new Date();
         let hour = d.getHours(); // pobranie godziny z systemu
-        let sunsetround = sunset / 100000000; // pobranie godziny zachodu słonca z API i przyciecie 
-
-        if (hour < sunsetround && hour > 6) // switch tla, jesli mamy dzien 
+        
+        if (hour < sunset && hour > sunrise) // switch tla, jesli mamy dzien 
         //dzien
         {
 
