@@ -17,96 +17,66 @@ class Search {
         }
     }
 
-    refresh(temp, rain=0, snow=0, clouds=0) {
+    refresh(temp, clouds) {
         // TODO: info dla użytkownika na podstawie pogody
         let tip;
 
         if (temp > 24) {
-            if (rain == 0) {
-                if (clouds < 0.2) {
-                    tip = "Ciesz się upalnym i słonecznym dniem!";
-                }
-                else {
-                    tip = "To będzie upalny dzień. Spodziewaj się jednak zachmurzeń.";
-                }
+            if (clouds < 20) {
+                tip = "Ciesz się upalnym i słonecznym dniem!";
                 return tip;
             }
-            else if (rain < 0.2) {
-                tip = "To będzie upalny dzień. Spodziewaj się jednak niewielkich opadów deszczu.";
+            else if(clouds>=20 && clouds <= 50) {
+                tip = "To będzie upalny dzień. Spodziewaj się jednak zachmurzeń.";
                 return tip;
             }
-            else {
-                tip = "To będzie upalny dzień. Weź jednak ze sobą parasol."
+            else{
+                tip="To będzie upalny dzień. Spodziewaj się jednak dużego zachmurzenia."
                 return tip;
             }
-
         }
 
         else if (temp <= 24 && temp >= 17) {
-            if (rain == 0) {
-                if (clouds < 0.2) {
-                    tip = "Ciesz się ciepłym i słonecznym dniem!";
-                }
-                else {
-                    tip = "To będzie ciepły dzień. Spodziewaj się jednak zachmurzeń.";
-                }
+            if (clouds < 20) {
+                tip = "Ciesz się ciepłym i słonecznym dniem!";
                 return tip;
             }
-            else if (rain < 0.2) {
-                tip = "To będzie ciepły dzień. Spodziewaj się jednak niewielkich opadów deszczu.";
+            else if(clouds >=20 && clouds <=50) {
+                tip = "To będzie ciepły dzień. Spodziewaj się jednak zachmurzeń.";
                 return tip;
             }
-            else {
-                tip = "To będzie ciepły dzień. Weź jednak ze sobą parasol."
+            else{
+                tip = "To będzie ciepły dzień. Spodziewaj się jednak dużego zachmurzenia."
                 return tip;
             }
         }
 
         else if (temp < 17 && temp >= 10) {
-            if (rain == 0) {
-                if (clouds < 0.2) {
-                    tip = "Przed tobą słoneczny i umiarkowanie ciepły dzień";
-                }
-                else {
-                    tip = "Przed tobą umiarkowanie ciepły dzień. Spodziewaj się jednak zachmurzeń.";
-                }
+            if (clouds < 20) {
+                tip = "Przed tobą słoneczny i umiarkowanie ciepły dzień.";
                 return tip;
             }
-            else if (rain < 0.2) {
-                tip = "To będzie umiarkowanie ciepły dzień. Spodziewaj się jednak niewielkich opadów deszczu.";
+            else if(clouds>=20 && clouds<=50){
+                tip = "Przed tobą umiarkowanie ciepły dzień. Spodziewaj się jednak zachmurzeń.";
                 return tip;
             }
-            else {
-                tip = "To będzie umiarkowanie ciepły dzień. Weź jednak ze sobą parasol."
+            else{
+                tip = "Przed tobą umiarkowanie ciepły dzień. Spodziewaj się jednak dużego zachmurzenia."
                 return tip;
             }
         }
 
         else {
-            if (rain == 0 && snow == 0) {
-                if (clouds < 0.2) {
-                    tip = "Ubierz się ciepło";
-                }
-                else {
-                    tip = "To będzie chłodny i pochmurny dzień. Ubierz się ciepło.";
-                }
+            if (clouds < 20) {
+                tip = "Przed tobą chłodny dzień. Ubierz się ciepło.";
                 return tip;
             }
-            else if ((rain < 0.2 && rain > 0) && (snow < 0.2 && snow > 0)) {
-                tip = "Przed tobą chłodny dzień i niewielkie opady deszczu ze śniegiem. Ubierz się ciepło!";
+            else if(clouds>=20 && clouds <=50) {
+                tip = "To będzie chłodny i pochmurny dzień. Ubierz się ciepło.";
                 return tip;
             }
-            else if (rain >= 0.2 && snow >= 0.2) {
-                tip = "Przed tobą chłodny dzień i opadu deszczu ze śniegiem. Ubierz się ciepło i weź parasol!";
-                return tip;
-            }
-            else {
-                if (rain > snow) {
-                    tip = "Przed tobą chłodny dzień i opady deszczu. Ubierz się ciepło i weź parasol!";
-                }
-                else {
-                    tip = "Przed tobą chłodny dzień i opady śniegu. Ubierz się ciepło!";
-                }
+            else{
+                tip = "Przed tobą chłodny i bardzo pochmurny dzień. Ubierz się ciepło.";
                 return tip;
             }
         }
@@ -135,10 +105,10 @@ class Search {
     }
 
 
-    loading(isLoading) {
+    loading(isLoading){
 
         if (isLoading) {
-            let lupa = document.querySelector('#lupa');
+            let lupa = document.querySelector('#loupe');
             lupa.className = "ui small active loader"; //podmiana na lupy na ikonke loadera
             lupa.style.left = "90%";
 
