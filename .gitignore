@@ -1,6 +1,6 @@
 # dependencies
 node_modules
-app.js
+#app.js
 
 npm-debug.log*
 
