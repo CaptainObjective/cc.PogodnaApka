@@ -1,6 +1,6 @@
 body {
     background: skyblue;
-    margin: 5vh 20vw;
+    margin: 5vh 15vw;
     padding: 0;
     background-attachment: fixed;
     background-size: cover;
@@ -68,13 +68,14 @@ body {
 
 #spotify {
     margin: 2vh 0;
-
+    width: 28vw;
+    height: 18vh;
 }
 
 .results {
     /* margin: 2vh 2vw; */
     position: relative;
-    top: 5vh;
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
