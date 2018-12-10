@@ -63,13 +63,17 @@ body {
 }
 
 #mood {
-    /* margin: 2vh 20vw; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 #spotify {
+    
     margin: 2vh 0;
     width: 28vw;
-    height: 18vh;
+    height: 12vh;
 }
 
 .results {
