@@ -131,9 +131,7 @@ class Search {
                     return tip;
                 }
             }
-
         }
-
     }
 
 
@@ -142,7 +140,7 @@ class Search {
 
         let finalTip;
         let text;
-        finalTip = document.createElement("H4"); // stworzenie naglowka
+        finalTip = document.createElement("I"); // stworzenie naglowka
         text = document.createTextNode(tip);
         finalTip.appendChild(text); // dodanie info(tekstu) do naglowka
         let tipresult = document.querySelector('#tipresult');

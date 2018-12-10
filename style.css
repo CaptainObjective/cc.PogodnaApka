@@ -63,11 +63,24 @@ body {
 #tipresult{
     text-align:center;
     opacity:0.75;
+    font-size:1.4vw;
+}
+
+@media screen and (max-width:900px){
+    #tipresult{
+        font-size:1.8vw;
+    }
+}
+
+@media screen and (max-width:650px){
+    #tipresult{
+        font-size:2.4vw;
+    }
 }
 
 #mainbar {
     display: inline;
-    font-size: 1.6em;
+    font-size: 1.65em;
 }
 
 #mood {
@@ -105,6 +118,7 @@ body {
     justify-content: center;
     margin: 7vh 2vw;
 }
+
 
 
 
