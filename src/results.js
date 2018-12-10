@@ -1,4 +1,3 @@
-
 let weatherIcon = document.getElementById("icon");
 let mainbar = document.getElementById("mainbar");
 let mainPressure = document.getElementById("mainPressure");
@@ -15,44 +14,44 @@ class Results {
     }
     refresh(weather) {
 
-            let icon;           
-            switch (weather.weatherDescription) {
-                case "clear sky":
-                   icon = "01d"
-                    break;
-                case "fewclouds":
-                    icon = "02d"
-                    break;
-                case "scattered clouds":
-                    icon = "03d"
-                    break;
-                case "broken clouds":
-                    icon = "04d"
-                    break;
-                case "shower rain":
-                    icon = "09d"
-                    break;
-                case "rain":
-                    icon = "10d"
-                    break;
-                case "thunderstorm":
-                    icon = "11d"
-                    break;
-                case "snow":
-                    icon = "13d"
-                    break;
-                case "mist":
-                    icon = "50d"
-                    break;
-                case "haze":
-                    icon = "50d"
-                    break;
-                default:
-                    icon = "01d"
+        let icon;
+        switch (weather.weatherDescription) {
+            case "clear sky":
+                icon = "01d"
+                break;
+            case "fewclouds":
+                icon = "02d"
+                break;
+            case "scattered clouds":
+                icon = "03d"
+                break;
+            case "broken clouds":
+                icon = "04d"
+                break;
+            case "shower rain":
+                icon = "09d"
+                break;
+            case "rain":
+                icon = "10d"
+                break;
+            case "thunderstorm":
+                icon = "11d"
+                break;
+            case "snow":
+                icon = "13d"
+                break;
+            case "mist":
+                icon = "50d"
+                break;
+            case "haze":
+                icon = "50d"
+                break;
+            default:
+                icon = "01d"
 
-            }
-            console.log(icon);
-       
+        }
+        console.log(icon);
+
         weatherIcon.src = `http://openweathermap.org/img/w/${icon}.png` // zmienna
 
         //TODO: fcja sprawdzająca czy jest już po zachodzie ( w zależności ):
@@ -60,10 +59,10 @@ class Results {
         // "Do zachodu/wschodu został"
 
         const currDate = new Date();
-        let isAfterSunset = ( currDate > weather.sunset);
+        let isAfterSunset = (currDate > weather.sunset);
         console.log(isAfterSunset);
-
-        mainbar.innerHTML = `${weather.mainTemp}&#8451  ${weather.cityName}`; //temp + miasto
+        let degrees = Math.round(weather.mainTemp);
+        mainbar.innerHTML = `${degrees}&#8451  ${weather.cityName}`; //temp + miasto
         mainPressure.innerHTML = `Ciśnienie: ${weather.mainPressure} hPa`; //ciśnienie
         mainHumidity.innerHTML = `Wilgotność powietrza: ${weather.mainHumidity}%`; //wilgotność
         windSpeed.innerHTML = `Prędkość wiatru: ${weather.windSpeed} m/s`; //wiaterek
@@ -73,7 +72,7 @@ class Results {
         //todo: Od wschodu minęło / do wschodu zostało
         sunset.innerHTML = `Zachód słońca:  ${weather.sunset.toLocaleTimeString()}`; //zachód słońca
         //todo Do zachodu zostało / od zahodu minęło
-       
+
     }
 }
 
