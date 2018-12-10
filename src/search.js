@@ -109,11 +109,11 @@ class Search {
     loading(){
 
         let lupa = document.querySelector('#loupe');
-        lupa.className = "ui tiny active loader"; //podmiana na lupy na ikonke loadera
-        lupa.style.left = "97%";
+        lupa.className = "ui small active loader"; //podmiana na lupy na ikonke loadera
+        lupa.style.left = "96.7%";
 
         setTimeout(function () {
-            lupa.className = "search icon"; // po 0.5s powrot do ikonki lupy
+            lupa.className = "inverted circular search link icon"; // po 0.5s powrot do ikonki lupy
             lupa.style.left = "";
         }, 500)
     }

@@ -113,7 +113,7 @@ const display_response = () => {
     results.refresh(weather);
     console.log(weather);
     background.refresh(weather);
-    // search.showTip(search.refresh(weather.mainTemp, weather.mainHumidity, data.clouds.all));
+    search.showTip(search.refresh(weather));
     music.refresh(weather);
     // TODO: Jak bartek zrobi to trzeba będzie obsłużyć loadery
 }
@@ -146,10 +146,15 @@ const loaded = (e) => {
 }
 
 window.addEventListener('load', loaded);
-document.getElementById('loupe').addEventListener('click', refresh_city);
+document.getElementById('loupe').addEventListener('click', function(){
+
+    refresh_city();
+    search.loading();
+    search.showTip(search.refresh(weather));
+});
 document.getElementById('search').addEventListener('keypress', (e) => e.key == 'Enter' && refresh_city());
-// document.getElementById('search').addEventListener('keypress', (e) => e.key == 'Enter' && search.loading());
-// document.getElementById('search').addEventListener('keypress', (e) => e.key == 'Enter' && search.showTip(search.refresh(weather)));
+document.getElementById('search').addEventListener('keypress', (e) => e.key == 'Enter' && search.loading());
+document.getElementById('search').addEventListener('keypress', (e) => e.key == 'Enter' && search.showTip(search.refresh(weather)));
 
 window.addEventListener('keypressed', refresh_city);
 
