@@ -1,6 +1,6 @@
 body {
     background: skyblue;
-    margin: 5vh 0;
+    margin: 5vh 20vw;
     padding: 0;
     background-attachment: fixed;
     background-size: cover;
@@ -58,6 +58,7 @@ body {
 
 #mainbar {
     display: inline;
+    font-size: 1.5em;
 
 }
 
@@ -79,7 +80,7 @@ body {
     justify-content: center;
     align-items: center;
     margin: 10px;
-    font-size: 15px;
+    font-size: 12px;
     letter-spacing: 1px;
     line-height: 200%;
     
