@@ -6,6 +6,8 @@ let mainHumidity = document.getElementById("mainHumidity");
 let windSpeed = document.getElementById("windSpeed");
 let windDeg = document.getElementById("windDeg");
 let clouds = document.getElementById("clouds");
+let sunrise = document.getElementById("sunrise");
+let sunset = document.getElementById("sunset");
 
 class Results {
     constructor() {
@@ -53,12 +55,24 @@ class Results {
        
         weatherIcon.src = `http://openweathermap.org/img/w/${icon}.png` // zmienna
 
+        //TODO: fcja sprawdzająca czy jest już po zachodzie ( w zależności ):
+        // "Od wschodu/zachodu minęło"  przed zachodem/po zachodzie
+        // "Do zachodu/wschodu został"
+
+        const currDate = new Date();
+        let isAfterSunset = ( currDate > weather.sunset);
+        console.log(isAfterSunset);
+
         mainbar.innerHTML = `${weather.mainTemp}&#8451  ${weather.cityName}`; //temp + miasto
         mainPressure.innerHTML = `Ciśnienie: ${weather.mainPressure} hPa`; //ciśnienie
         mainHumidity.innerHTML = `Wilgotność powietrza: ${weather.mainHumidity}%`; //wilgotność
         windSpeed.innerHTML = `Prędkość wiatru: ${weather.windSpeed} m/s`; //wiaterek
         windDeg.innerHTML = `Kierunek wiatru: ${weather.windDeg} deg`; //wiaterek kierunek
         clouds.innerHTML = `Zachmurzenie: ${weather.clouds}%`; //zachmurzenie
+        sunrise.innerHTML = `Wschód słońca:   ${weather.sunrise.toLocaleTimeString()}`; //wschód słońca
+        //todo: Od wschodu minęło / do wschodu zostało
+        sunset.innerHTML = `Zachód słońca:  ${weather.sunset.toLocaleTimeString()}`; //zachód słońca
+        //todo Do zachodu zostało / od zahodu minęło
        
     }
 }

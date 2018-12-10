@@ -1,6 +1,6 @@
 body {
     background: skyblue;
-    margin: 0;
+    margin: 5vh 15vw;
     padding: 0;
     background-attachment: fixed;
     background-size: cover;
@@ -9,13 +9,13 @@ body {
 
 #wrapper {
     /* min-height: 100vh; */
-
+   
 }
 
 .content,
 .input {
     opacity: 0.8;
-
+   
 }
 
 #video-background {
@@ -31,11 +31,11 @@ body {
 }
 
 #results,
-#search,
 #details {
-    margin: 2vh;
+    margin: 1vh 2vw;
     display: flex;
     justify-content: center;
+   
 }
 
 #ikonka {
@@ -58,29 +58,43 @@ body {
 
 #mainbar {
     display: inline;
-    
+    font-size: 1.5em;
+
 }
 
 #mood {
-    /* margin: 2vh 20vw; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 #spotify {
+    
     margin: 2vh 0;
-
+    width: 28vw;
+    height: 12vh;
 }
 
 .results {
     /* margin: 2vh 2vw; */
     position: relative;
-    top: 10vh;
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 10px;
-    font-size: 15px;
+    font-size: 12px;
     letter-spacing: 1px;
-    line-height: 300%;
+    line-height: 200%;
+    
+}
 
+.search {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 1vh 2vw;
+    
 }

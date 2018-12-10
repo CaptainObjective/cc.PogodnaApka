@@ -15,17 +15,18 @@
         <video autoplay loop id="video-background" muted plays-inline>
         </video>
 
-
+        <div id="search" class="ui search">
+            <div class="ui icon input">
+                <input class="prompt" type="text" placeholder="Podaj miejscowość">
+                <i id="loupe" class="search icon"></i>
+            </div>
+        </div>
         <div id="results" class="ui segment content">
             <img id="icon"></img>
-            <h1 id="mainbar" class="ui header"></h1>
-            
+            <h3 id="mainbar" class="ui header"></h3>
+
         </div>
 
-        <div id="search" class="ui fluid icon input">
-            <input type="text" placeholder="Wprowadź nazwę miasta...">
-            <i id="loupe" class="search icon"></i>
-        </div>
 
         <div id="details" class="ui horizontal segments content ">
             <div class="ui segment content">
@@ -35,28 +36,28 @@
                     <div id="windSpeed"></div>
                     <div id="windDeg"></div>
                     <div id="clouds"></div>
+                    <div id="sunrise"></div>
+                    <div id="sunset"></div>
                 </div>
             </div>
 
 
             <div id="mood" class="ui segment">
-                <h3 id="mood_text" class="ui header centered">
+                <h4 id="mood_text" class="ui header centered">
                     <div>
                         Poczuj tę pogodę przez piosenkę!
                         <div class="sub header">Wybraliśmy dla Ciebie utwór, który pasuje do obecnej pogody</div>
                         <div id="audio_div">
-                            <iframe id="spotify" width="300" height="380" frameborder="0" allowtransparency="false"
+                            <iframe id="spotify"  frameborder="0" allowtransparency="false"
                                 allow="encrypted-media"></iframe>
                         </div>
                     </div>
-                </h3>
+                </h4>
             </div>
         </div>
 
 
     </div>
-
-
 
 
 
