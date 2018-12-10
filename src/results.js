@@ -55,7 +55,6 @@ class Results {
        
         weatherIcon.src = `http://openweathermap.org/img/w/${icon}.png` // zmienna
 
-
         //TODO: fcja sprawdzająca czy jest już po zachodzie ( w zależności ):
         // "Od wschodu/zachodu minęło"  przed zachodem/po zachodzie
         // "Do zachodu/wschodu został"
