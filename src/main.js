@@ -3,6 +3,7 @@ import Music from './music';
 import Results from './results';
 import Weather from './weather';
 import Search from './search';
+import cityList from './../db/city.list.json'
 
 console.log('main.js loaded');
 const background = new Background;
@@ -11,95 +12,10 @@ const search = new Search;
 const weather = new Weather;
 const music = new Music;
 
-// let content = fetch("db/city.list.json")
-// .then( r => r.json)
-// .then( cityList => cityList.map(city => {
-//     {name: city.name}
-// }))
-// .then( result => console.log(result));
+let content = cityList.map( city => {
+    return { category: city.country, title : city.name}
+});
 
-
-// ROZPAKOWYWANIE JSONA do Tablicy tylko z nazwami miast - do wyszukiwania / podpowiadania w searchu
-
-// let content = $.getJSON("city.list.json", data => {
-//     data.map( city => {
-//         return {name: city.name}
-//     })
-// });
-
-let content = content = [{
-        title: 'Andorra'
-    },
-    {
-        title: 'United Arab Emirates'
-    },
-    {
-        title: 'Afghanistan'
-    },
-    {
-        title: 'Antigua'
-    },
-    {
-        title: 'Anguilla'
-    },
-    {
-        title: 'Albania'
-    },
-    {
-        title: 'Armenia'
-    },
-    {
-        title: 'Netherlands Antilles'
-    },
-    {
-        title: 'Angola'
-    },
-    {
-        title: 'Argentina'
-    },
-    {
-        title: 'American Samoa'
-    },
-    {
-        title: 'Austria'
-    },
-    {
-        title: 'Australia'
-    },
-    {
-        title: 'Aruba'
-    },
-    {
-        title: 'Aland Islands'
-    },
-    {
-        title: 'Azerbaijan'
-    },
-    {
-        title: 'Bosnia'
-    },
-    {
-        title: 'Barbados'
-    },
-    {
-        title: 'Bangladesh'
-    },
-    {
-        title: 'Belgium'
-    },
-    {
-        title: 'Burkina Faso'
-    },
-    {
-        title: 'Bulgaria'
-    },
-    {
-        title: 'Bahrain'
-    },
-    {
-        title: 'Burundi'
-    }
-];
 
 const refresh_city = () => {
 
@@ -131,6 +47,7 @@ const loaded = (e) => {
     //     console.log("Geolocation is not allowed");
     //     refresh_city();
     // }
+    
     $('.input')
         .transition({
             animation: 'swing down in',
@@ -138,8 +55,10 @@ const loaded = (e) => {
         });
         
     refresh_city();
+
     console.log(content);
     $('.ui.search').search({
+        type : 'category',
         source: content
     });
 
