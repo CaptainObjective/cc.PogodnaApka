@@ -54,15 +54,16 @@ class Results {
 
         weatherIcon.src = `http://openweathermap.org/img/w/${icon}.png` // zmienna
 
-        //TODO: fcja sprawdzająca czy jest już po zachodzie ( w zależności ):
+        //TODO: fcja sprawdzająca czy jest już po zachodzie ( w zależności )
         // "Od wschodu/zachodu minęło"  przed zachodem/po zachodzie
         // "Do zachodu/wschodu został"
 
+
         const currDate = new Date();
         let isAfterSunset = (currDate > weather.sunset);
-        console.log(isAfterSunset);
-        let degrees = Math.round(weather.mainTemp);
-        mainbar.innerHTML = `${degrees}&#8451  ${weather.cityName}`; //temp + miasto
+        
+        let degree = Math.round(weather.mainTemp); 
+        mainbar.innerHTML = `${degree}&#8451  ${weather.cityName}`; //temp + miasto
         mainPressure.innerHTML = `Ciśnienie: ${weather.mainPressure} hPa`; //ciśnienie
         mainHumidity.innerHTML = `Wilgotność powietrza: ${weather.mainHumidity}%`; //wilgotność
         windSpeed.innerHTML = `Prędkość wiatru: ${weather.windSpeed} m/s`; //wiaterek
