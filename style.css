@@ -46,20 +46,27 @@ body {
     height: 75px;
     weight: 75px;
     position: relative;
-    top: 2vh;
 }
 
 #results.ui.segment.content {
     display: flex;
-    align-items: center;
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: space-between;
+}
 
+#cityandtemp{
+    display:flex;
+    justify-content: center;
+}
+
+#tipresult{
+    text-align:center;
+    opacity:0.75;
 }
 
 #mainbar {
     display: inline;
-    font-size: 1.5em;
-
+    font-size: 1.6em;
 }
 
 #mood {
@@ -88,13 +95,12 @@ body {
     font-size: 12px;
     letter-spacing: 1px;
     line-height: 200%;
-    
+
 }
 
-.search {
+#search {
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin: 1vh 2vw;
-    
 }

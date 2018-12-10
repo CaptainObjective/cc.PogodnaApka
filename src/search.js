@@ -17,16 +17,17 @@ class Search {
         }
     }
 
-    refresh(temp, clouds) {
+    refresh(weather) {
         // TODO: info dla użytkownika na podstawie pogody
         let tip;
 
-        if (temp > 24) {
-            if (clouds < 20) {
+        console.log(weather.cityName, weather.mainTemp, weather.clouds);
+        if (weather.mainTemp > 24) {
+            if (weather.clouds < 20) {
                 tip = "Ciesz się upalnym i słonecznym dniem!";
                 return tip;
             }
-            else if(clouds>=20 && clouds <= 50) {
+            else if(weather.clouds>=20 && weather.clouds <= 50) {
                 tip = "To będzie upalny dzień. Spodziewaj się jednak zachmurzeń.";
                 return tip;
             }
@@ -36,12 +37,12 @@ class Search {
             }
         }
 
-        else if (temp <= 24 && temp >= 17) {
-            if (clouds < 20) {
+        else if (weather.mainTemp <= 24 && weather.mainTemp >= 17) {
+            if (weather.clouds < 20) {
                 tip = "Ciesz się ciepłym i słonecznym dniem!";
                 return tip;
             }
-            else if(clouds >=20 && clouds <=50) {
+            else if(weather.clouds >=20 && weather.clouds <=50) {
                 tip = "To będzie ciepły dzień. Spodziewaj się jednak zachmurzeń.";
                 return tip;
             }
@@ -51,12 +52,12 @@ class Search {
             }
         }
 
-        else if (temp < 17 && temp >= 10) {
-            if (clouds < 20) {
+        else if (weather.mainTemp < 17 && weather.mainTemp >= 10) {
+            if (weather.clouds < 20) {
                 tip = "Przed tobą słoneczny i umiarkowanie ciepły dzień.";
                 return tip;
             }
-            else if(clouds>=20 && clouds<=50){
+            else if(weather.clouds>=20 && weather.clouds<=50){
                 tip = "Przed tobą umiarkowanie ciepły dzień. Spodziewaj się jednak zachmurzeń.";
                 return tip;
             }
@@ -67,11 +68,11 @@ class Search {
         }
 
         else {
-            if (clouds < 20) {
+            if (weather.clouds < 20) {
                 tip = "Przed tobą chłodny dzień. Ubierz się ciepło.";
                 return tip;
             }
-            else if(clouds>=20 && clouds <=50) {
+            else if(weather.clouds>=20 && weather.clouds <=50) {
                 tip = "To będzie chłodny i pochmurny dzień. Ubierz się ciepło.";
                 return tip;
             }
@@ -90,33 +91,31 @@ class Search {
         finalTip = document.createElement("H4"); // stworzenie naglowka
         text = document.createTextNode(tip);
         finalTip.appendChild(text); // dodanie info(tekstu) do naglowka
-        let results = document.querySelector('#results');
+        let tipresult = document.querySelector('#tipresult');
 
         if (this.czyTip == false) {
-            results.appendChild(finalTip); // dodanie naglowka do results
+            tipresult.appendChild(finalTip); // dodanie naglowka do results
         }
 
         else {
-            results.removeChild(results.children[2]); // usuniecie nieaktualnego naglowka
-            results.appendChild(finalTip); // aktualizacja nagłowka
+            tipresult.removeChild(tipresult.children[0]); // usuniecie nieaktualnego naglowka
+            tipresult.appendChild(finalTip); // aktualizacja nagłowka
         }
 
         this.czyTip = true; // informuje, ze zaszło juz dodanie info do results
     }
 
 
-    loading(isLoading){
+    loading(){
 
-        if (isLoading) {
-            let lupa = document.querySelector('#loupe');
-            lupa.className = "ui small active loader"; //podmiana na lupy na ikonke loadera
-            lupa.style.left = "90%";
+        let lupa = document.querySelector('#loupe');
+        lupa.className = "ui tiny active loader"; //podmiana na lupy na ikonke loadera
+        lupa.style.left = "97%";
 
-            setTimeout(function () {
-                lupa.className = "inverted circular search link icon"; // po 0.5s powrot do ikonki lupy
-                lupa.style.left = "";
-            }, 500)
-        }
+        setTimeout(function () {
+            lupa.className = "search icon"; // po 0.5s powrot do ikonki lupy
+            lupa.style.left = "";
+        }, 500)
     }
 }
 

@@ -148,6 +148,8 @@ const loaded = (e) => {
 window.addEventListener('load', loaded);
 document.getElementById('loupe').addEventListener('click', refresh_city);
 document.getElementById('search').addEventListener('keypress', (e) => e.key == 'Enter' && refresh_city());
+// document.getElementById('search').addEventListener('keypress', (e) => e.key == 'Enter' && search.loading());
+// document.getElementById('search').addEventListener('keypress', (e) => e.key == 'Enter' && search.showTip(search.refresh(weather)));
 
 window.addEventListener('keypressed', refresh_city);
 
