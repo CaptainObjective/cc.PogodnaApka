@@ -1,6 +1,6 @@
 body {
     background: skyblue;
-    margin: 1vh 15vw;
+    margin: 0 15vw;
     padding: 0;
     background-attachment: fixed;
     background-size: cover;
@@ -94,9 +94,9 @@ body {
 
 #spotify {
     
-    margin: 2vh 0;
-    width: 18vw;
-    height: 48vh;
+    margin-top: 2vh;
+    width: 250px;
+    height: 280px;
 }
 
 .results {
@@ -105,7 +105,7 @@ body {
     
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-items: center;
     align-items: center;
     margin: 5px;
     font-size: 12px;
@@ -118,6 +118,6 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 4vh 0;
+    margin: 6vh 0;
     
 }
