@@ -9,12 +9,13 @@ body {
 
 #wrapper {
     /* min-height: 100vh; */
-   
+  
 }
 
 .content,
 .input {
     opacity: 0.8;
+    /* visibility: hidden; */
    
 }
 
@@ -102,5 +103,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 1vh 2vw;
+    margin: 5vh 2vw;
 }
+
+

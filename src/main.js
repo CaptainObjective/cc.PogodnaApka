@@ -136,7 +136,7 @@ const loaded = (e) => {
             animation: 'swing down in',
             duration: '3s',
         });
-
+        
     refresh_city();
     console.log(content);
     $('.ui.search').search({
