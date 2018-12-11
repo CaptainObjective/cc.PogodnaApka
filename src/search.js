@@ -23,7 +23,7 @@ class Search {
         let data = new Date();
         let godzina = data.getHours();
 
-        if(godzina > weather.sunrise && godzina < weather.sunset){
+        if(godzina > weather.sunrise.getHours() && godzina < weather.sunset.getHours()){
             if (weather.mainTemp > 24) {
                 if (weather.clouds < 20) {
                     tip = "Ciesz się upalnym i słonecznym dniem!";
