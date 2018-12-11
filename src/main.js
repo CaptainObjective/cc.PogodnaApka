@@ -27,7 +27,6 @@ const refresh_city = () => {
 
 const display_response = () => {
     results.refresh(weather);
-    console.log(weather);
     background.refresh(weather);
     search.showTip(search.refresh(weather));
     music.refresh(weather);
@@ -56,7 +55,7 @@ const loaded = (e) => {
         
     refresh_city();
 
-    console.log(content);
+    // Hint function - after input any key by user search through the city database, list all of matches in the list "country" | cityName
     $('.ui.search').search({
         type : 'category',
         source: content

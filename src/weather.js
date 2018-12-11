@@ -6,6 +6,9 @@ class Weather {
         console.log('Weather loaded')
 
         // TODO: na wzór tego utworzyć atrybuty które moga się przydać, w zalezności od tego co jest w API ofc
+
+        // ------------------------------------------ CURRENT WEATHER DATA -----------------------------------------
+
         this.cityName; // nazwa miasta - kiedy byśmy chcieli zwróć po wyszukaniu przez lon, lat na przykład
         this.countryCode; // kod kraju ie. GP,JP
         this.sunrise; // czas wschodu słońca
@@ -29,13 +32,18 @@ class Weather {
 
         this.lon; // szerokość geograficzna
         this.lat; // długość geogragiczna
+
+
+         // ------------------------------------------ 5 DAYS FORECAST -----------------------------------------
+
+        
     }
 
     getWeatherByCityName(cityName) {
-        let url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&&units=metric&APPID=86677a0c14bfe5ca97291ba315d620e6`;
+        let url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&&units=metric&lang=pl&&APPID=86677a0c14bfe5ca97291ba315d620e6`;
         fetch(url).then(r => r.json()).then(data => {
-            console.log(data)
 
+            console.log(data);
             this.cityName = data.name;
             this.countryCode = data.sys.country;
 
@@ -63,6 +71,12 @@ class Weather {
         });
     }
 
+    query(city) {
+        this.getWeatherByCityName(city);
+        this.getWeatherForecast(city);
+
+    }
+
     getWeatherByCityID(cityID) {
         let url = `https://api.openweathermap.org/data/2.5/weather?id=2172797&appid=86677a0c14bfe5ca97291ba315d620e6`;
         fetch(url).then(r => r.json).then(data => console.log(data));
@@ -73,10 +87,29 @@ class Weather {
         fetch(url).then(r => r.json).then(data => console.log(data));
     }
 
-    query(city) {
-        this.getWeatherByCityName(city);
+    // Returnes weather forecast for 5 days(3hrs interval) for given city
+    getWeatherForecast(cityName) {
+        let url = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&lang=pl&units=metric&APPID=86677a0c14bfe5ca97291ba315d620e6`;
+        fetch(url).then(r => r.json()).then(data => {
+            console.log("----weather.getWeatherForecast-----");
+            console.log(data);
+            
+            let forecastByDay = [[]];
+            let i = 0;
 
+            data.list.forEach( (hourlyInfo, index, list) => {
+                forecastByDay[i].push(hourlyInfo);
+                if("21:00:00" === hourlyInfo.dt_txt.slice(-8) && index !== list.length-1){
+                    i++;
+                    forecastByDay.push(new Array());
+                } 
+            })
+
+            console.log(forecastByDay);
+
+        });
     }
+
     // sunrise(sunriseTime) {
     //     let now = new Date();
     //     this.sunrise = new Date(sunriseTime * 1000);
@@ -89,7 +122,7 @@ class Weather {
     //     this.sunset = new Date(sunsetTime * 1000);
     //     // this.toSunSet = Date(sunset - now).toLocaleTimeString();
     // }
-    
+
 }
 
 export default Weather;

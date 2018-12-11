@@ -58,10 +58,10 @@ class Results {
         // "Od wschodu/zachodu minęło"  przed zachodem/po zachodzie
         // "Do zachodu/wschodu został"
 
-
         const currDate = new Date();
         let isAfterSunset = (currDate > weather.sunset);
         
+
         let degree = Math.round(weather.mainTemp); 
         mainbar.innerHTML = `${degree}&#8451  ${weather.cityName}`; //temp + miasto
         mainPressure.innerHTML = `Ciśnienie: ${weather.mainPressure} hPa`; //ciśnienie
