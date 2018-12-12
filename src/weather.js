@@ -36,6 +36,49 @@ class Weather {
 
          // ------------------------------------------ 5 DAYS FORECAST -----------------------------------------
 
+        /**
+         * The 2 dim array type [[]] var contains 5 days weather forecast(3hrs weather snapshots), spltted by days
+         * UNIT VALUES AS IN CURRENT WEATHER SECTION
+         * 
+         * i.e Weather.day[0] returns
+         * clouds: {
+             all: 88        
+         }
+         dt: 1544637600
+         dt_txt: "2018-12-12 18:00:00"
+         main:
+             grnd_level: 1016.24
+         humidity: 98
+         pressure: 1016.24
+         sea_level: 1037.73
+         temp: -0.93
+         temp_kf: -1.31
+         temp_max: 0.38
+         temp_min: -0.93
+         snow: {
+             3 h: 0.105
+         }
+         sys: {
+             pod: "n"
+         }
+         weather: Array(1)
+         0: {
+             id: 600,
+             main: "Snow",
+             description: "słabe opady śniegu",
+             icon: "13n"
+         }
+         length: 1
+         wind: {
+             speed: 2.57,
+             deg: 1.50299
+         }
+         }
+         *
+         */
+         this.day; // day[[0],[1],[2] ... [5]] ===> day[ [today] , [today+1], [today + 2] ... [today + 5]] 
+
+
         
     }
 
@@ -71,6 +114,7 @@ class Weather {
         });
     }
 
+
     query(city) {
         this.getWeatherByCityName(city);
         this.getWeatherForecast(city);
@@ -82,31 +126,34 @@ class Weather {
         fetch(url).then(r => r.json).then(data => console.log(data));
     }
 
+
     getweatherByCoordinates(lat, lon) {
         let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}`;
         fetch(url).then(r => r.json).then(data => console.log(data));
     }
 
+
     // Returnes weather forecast for 5 days(3hrs interval) for given city
     getWeatherForecast(cityName) {
         let url = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&lang=pl&units=metric&APPID=86677a0c14bfe5ca97291ba315d620e6`;
         fetch(url).then(r => r.json()).then(data => {
-            console.log("----weather.getWeatherForecast-----");
-            console.log(data);
-            
-            let forecastByDay = [[]];
+         
+            // initialize 2dim array where we put weather data spread for days
+            let day = [[]];
             let i = 0;
 
+            // take out weather data and sort it into the 2dim array depend of day ( 3hr interval info || 00:00:00, 03:00:00 ... 21:00:00 )
             data.list.forEach( (hourlyInfo, index, list) => {
-                forecastByDay[i].push(hourlyInfo);
+                
+                day[i].push(hourlyInfo);
+
                 if("21:00:00" === hourlyInfo.dt_txt.slice(-8) && index !== list.length-1){
                     i++;
-                    forecastByDay.push(new Array());
+                    day.push(new Array());
                 } 
             })
 
-            console.log(forecastByDay);
-
+            this.day = day;
         });
     }
 
